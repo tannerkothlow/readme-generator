@@ -1,5 +1,8 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const genMarkdown = require('./utils/generateMarkdown.js')
+
+//console.log(genMarkdown.test);
 
 const questions = [
     'What is your GitHub username?',
@@ -9,16 +12,22 @@ const questions = [
     'What kind of license should your project have?', // Inquirer multiple choice
     'What command should be run to instal dependencies?', //Default npm i
     'What command should be run to run tests?', //Default npm test
-    'What does the user need to know about using the repo?',
-    'What does the user need to know about contributing to the repo?'
+    'What are the usage instructions for you repo?',
+    'How can a user contribute to your repo?'
 ];
 
 // TODO: Create a function to write README file
 writeToFile = (fileName, data) => {
     //Breaks response down into all the individual pieces we need for ease of filling the template.
-    const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
-    console.log(`File name: ${fileName}.\n Prop 1: ${userGitHub}\n Prop 2: ${userEmail}\n Prop 3: ${projName}\n License Requested: ${projLicense}`);
-    //console.log(`File name: ${fileName}.\n Test 1: ${testAnsObj}.\n Test 2: ${testAnsObj2}`);
+    // const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
+    // console.log(`File name: ${fileName}.\n Prop 1: ${userGitHub}\n Prop 2: ${userEmail}\n Prop 3: ${projName}\n License Requested: ${projLicense}`);
+
+    //Data passed into genMarkdown function as the text content for fs.writeFile
+    fs.writeFile(fileName, genMarkdown.generateMarkdown(data), (err) => {
+        err ? console.error(err) : console.log(`Generating ${fileName}...`);
+    })
+    
+    //console.log(`Should spit out a header title: ${genMarkdown.generateMarkdown(data)}`);
 }
 
 init = () => {
@@ -66,7 +75,7 @@ init = () => {
             }
         ])
         .then((response) => {
-            writeToFile('README.md', response);
+            writeToFile('GEN_README.md', response);
         })
 }
 
