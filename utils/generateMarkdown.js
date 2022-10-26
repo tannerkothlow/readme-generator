@@ -11,9 +11,33 @@ renderLicenseLink = license => {}
 renderLicenseSection = license => {}
 
 // TODO: Create a function to generate markdown for README
-generateMarkdown = title => {
-  return `# ${title}
+generateMarkdown = data => {
+  const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
+  return `# ${projName}
 
+## ${projLicense}
+
+## Description
+
+${projDesc}
+
+## Table of Contents
+
+
+
+## Installation
+
+To instal necessary dependencies, run the following command:
+${projInst}
+
+## Usage
+
+${projRepoUse}
+
+## Contributing
+
+${projContr}
+Contact ${userGitHub} at ${userEmail} for any additional information on contributions.
 `;
 }
 
