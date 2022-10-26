@@ -23,38 +23,38 @@ ${projDesc}
 
 ## Table of Contents
 
-- [installation](#installation)
-- [usage](#usage)
-- [license](#license)
-- [contributing](#contributing)
-- [tests](#tests)
-- [questions](#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-## Installation {#installation}
+## Installation <a name ="installation"></a>
 
 To instal necessary dependencies, run the following command:
 
 ${projInst}
 
-## Usage {#usage}
+## Usage <a name ="usage"></a>
 
 ${projRepoUse}
 
-## License {#license}
+## License <a name ="license"></a>
 
 This project is under the ${projLicense} license.
 
-## Contributing {#contributing}
+## Contributing <a name ="contributing"></a>
 
 ${projContr}
 
-## Tests {#tests}
+## Tests <a name ="tests"></a>
 
 To run tests, enter the following command:
 
 ${projTest}
 
-## Questions {#questions}
+## Questions <a name ="questions"></a>
 
 Contact ${userGitHub} at ${userEmail} for any additional information on contributions.
 
