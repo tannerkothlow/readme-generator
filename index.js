@@ -1,5 +1,8 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const genMarkdown = require('./utils/generateMarkdown.js')
+
+//console.log(genMarkdown.test);
 
 const questions = [
     'What is your GitHub username?',
@@ -17,8 +20,10 @@ const questions = [
 writeToFile = (fileName, data) => {
     //Breaks response down into all the individual pieces we need for ease of filling the template.
     const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
+    
     console.log(`File name: ${fileName}.\n Prop 1: ${userGitHub}\n Prop 2: ${userEmail}\n Prop 3: ${projName}\n License Requested: ${projLicense}`);
-    //console.log(`File name: ${fileName}.\n Test 1: ${testAnsObj}.\n Test 2: ${testAnsObj2}`);
+
+    console.log(`Should spit out a header title: ${genMarkdown.generateMarkdown(projName)}`);
 }
 
 init = () => {
