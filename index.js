@@ -1,30 +1,69 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
-// TODO: Create an array of questions for user input
+
 const questions = [
-    'Test quesiton 1',
-    'Test quesiton 2'
+    'What is your GitHub username?',
+    'What is your email address?',
+    "What is your project's name?",
+    'Enter a short description for your project:',
+    'What kind of license should your project have?', // Inquirer multiple choice
+    'What command should be run to instal dependencies?', //Default npm i
+    'What command should be run to run tests?', //Default npm test
+    'What does the user need to know about using the repo?',
+    'What does the user need to know about contributing to the repo?'
 ];
 
 // TODO: Create a function to write README file
 writeToFile = (fileName, data) => {
-    const {testAnsObj, testAnsObj2} = data
-    console.log(`File name: ${fileName}.\n Test 1: ${testAnsObj}.\n Test 2: ${testAnsObj2}`);
+    //Breaks response down into all the individual pieces we need for ease of filling the template.
+    const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
+    console.log(`File name: ${fileName}.\n Prop 1: ${userGitHub}\n Prop 2: ${userEmail}\n Prop 3: ${projName}\n License Requested: ${projLicense}`);
+    //console.log(`File name: ${fileName}.\n Test 1: ${testAnsObj}.\n Test 2: ${testAnsObj2}`);
 }
 
-// TODO: Create a function to initialize app
 init = () => {
     inquirer
         .prompt([
             {
                 message: `${questions[0]}`,
-                name: 'testAnsObj',
+                name: 'userGitHub',
             },
             {
                 message: `${questions[1]}`,
-                name: 'testAnsObj2',
+                name: 'userEmail',
             },
+            {
+                message: `${questions[2]}`,
+                name: 'projName',
+            },
+            {
+                message: `${questions[3]}`,
+                name: 'projDesc',
+            },
+            {
+                type: 'list',
+                choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3.0', 'None'],
+                message: `${questions[4]}`,
+                name: 'projLicense',
+            },
+            {
+                message: `${questions[5]}`,
+                name: 'projInst',
+                default: 'npm i',
+            },
+            {
+                message: `${questions[6]}`,
+                name: 'projTest',
+                default: 'npm test',
+            },
+            {
+                message: `${questions[7]}`,
+                name: 'projRepoUse',
+            },
+            {
+                message: `${questions[8]}`,
+                name: 'projContr',
+            }
         ])
         .then((response) => {
             writeToFile('README.md', response);
