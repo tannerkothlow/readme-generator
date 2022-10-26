@@ -75,7 +75,7 @@ init = () => {
             }
         ])
         .then((response) => {
-            writeToFile('README.md', response);
+            writeToFile('GEN_README.md', response);
         })
 }
 

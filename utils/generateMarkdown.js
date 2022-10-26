@@ -28,6 +28,7 @@ ${projDesc}
 ## Installation
 
 To instal necessary dependencies, run the following command:
+
 ${projInst}
 
 ## Usage
