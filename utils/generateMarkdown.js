@@ -1,10 +1,35 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-renderLicenseBadge = license => {}
+renderLicenseBadge = license => {
+  // let label = "license";
+  let message;
+  let color;
+  switch (license) {
+    case "MIT":
+      message = "MIT";
+      color = "green";
+      break;
+    case "APACHE 2.0":
+      message = "APACHE%202.0";
+      color = "orange";
+      break;
+    case "GPL 3.0":
+      message = "GPL%203.0";
+      color = "yellow";
+      break;
+    case "BSD 3.0":
+      message = "BSD%203.0";
+      color = "blue"; 
+  }
+  return (message ? `license-${message}-${color}` : "")
+}
 
+console.log(`The return value for renderLicenseBadge: ${renderLicenseBadge}`);
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-renderLicenseLink = license => {}
+renderLicenseLink = licenseProp => {
+  return (licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : "");
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -12,10 +37,11 @@ renderLicenseSection = license => {}
 
 // TODO: Create a function to generate markdown for README
 generateMarkdown = data => {
-  const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
+  const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data;
+  const badgeURL = renderLicenseLink(renderLicenseBadge(projLicense));
   return `# ${projName}
 
-## ${projLicense}
+![license badge](${badgeURL})
 
 ## Description
 
