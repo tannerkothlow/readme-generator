@@ -21,13 +21,14 @@ renderLicenseBadge = license => {
       message = "BSD%203.0";
       color = "blue"; 
   }
+  console.log(`Return value from renderLicenseBadge: ${message ? `license-${message}-${color}` : ""}`);
   return (message ? `license-${message}-${color}` : "")
 }
 
-console.log(`The return value for renderLicenseBadge: ${renderLicenseBadge}`);
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 renderLicenseLink = licenseProp => {
+  console.log(`Return value for renderLicenseLink: ${licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : ""}`)
   return (licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : "");
 }
 
@@ -38,10 +39,10 @@ renderLicenseSection = license => {}
 // TODO: Create a function to generate markdown for README
 generateMarkdown = data => {
   const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data;
-  const badgeURL = renderLicenseLink(renderLicenseBadge(projLicense));
+  const badgeURL = `![license badge](${renderLicenseLink(renderLicenseBadge(projLicense))})`;
   return `# ${projName}
 
-![license badge](${badgeURL})
+${badgeURL}
 
 ## Description
 
