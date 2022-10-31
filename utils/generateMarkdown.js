@@ -39,10 +39,11 @@ renderLicenseSection = license => {}
 // TODO: Create a function to generate markdown for README
 generateMarkdown = data => {
   const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data;
-  const badgeURL = `![license badge](${renderLicenseLink(renderLicenseBadge(projLicense))})`;
+  const badgeURL = renderLicenseLink(renderLicenseBadge(projLicense));
+  const badgeData = badgeURL.length > 1 ? `![license badge](${badgeURL})` : "";
   return `# ${projName}
 
-${badgeURL}
+${badgeData}
 
 ## Description
 
