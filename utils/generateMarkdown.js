@@ -34,13 +34,20 @@ renderLicenseLink = licenseProp => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-renderLicenseSection = license => {}
+renderLicenseSection = license => {
+  if (license === "None") {
+    return `This project is not under any license.`;
+  } else {
+    return `This project is under the ${license} license.`;
+  };
+}
 
 // TODO: Create a function to generate markdown for README
 generateMarkdown = data => {
   const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data;
   const badgeURL = renderLicenseLink(renderLicenseBadge(projLicense));
   const badgeData = badgeURL.length > 1 ? `![license badge](${badgeURL})` : "";
+  const licenseContent = renderLicenseSection(projLicense);
   return `# ${projName}
 
 ${badgeData}
@@ -62,7 +69,7 @@ ${projDesc}
 
 To instal necessary dependencies, run the following command:
 
-${projInst}
+  ${projInst}
 
 ## Usage <a name ="usage"></a>
 
@@ -70,7 +77,7 @@ ${projRepoUse}
 
 ## License <a name ="license"></a>
 
-This project is under the ${projLicense} license.
+${licenseContent}
 
 ## Contributing <a name ="contributing"></a>
 
@@ -80,7 +87,7 @@ ${projContr}
 
 To run tests, enter the following command:
 
-${projTest}
+  ${projTest}
 
 ## Questions <a name ="questions"></a>
 
