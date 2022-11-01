@@ -12,7 +12,7 @@ const questions = [
     'What kind of license should your project have?', // Inquirer multiple choice
     'What command should be run to instal dependencies?', //Default npm i
     'What command should be run to run tests?', //Default npm test
-    'What are the usage instructions for you repo?',
+    'What are the usage instructions for your repo?',
     'How can a user contribute to your repo?'
 ];
 
