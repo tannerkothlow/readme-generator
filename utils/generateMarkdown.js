@@ -21,14 +21,14 @@ renderLicenseBadge = license => {
       message = "BSD%203.0";
       color = "blue"; 
   }
-  console.log(`Return value from renderLicenseBadge: ${message ? `license-${message}-${color}` : ""}`);
+  // console.log(`Return value from renderLicenseBadge: ${message ? `license-${message}-${color}` : ""}`);
   return (message ? `license-${message}-${color}` : "")
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 renderLicenseLink = licenseProp => {
-  console.log(`Return value for renderLicenseLink: ${licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : ""}`)
+  // console.log(`Return value for renderLicenseLink: ${licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : ""}`)
   return (licenseProp.length > 1 ? `https://img.shields.io/badge/${licenseProp}` : "");
 }
 
