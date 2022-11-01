@@ -18,15 +18,15 @@ Clone the repository to your machine. Once completed open the integrated termina
 
 ## Usage
 
-
+- To begin entering data for your README, invoke "node index.js" in the integrated terminal and you will be presented with a number of quesitons. Answer all question accordingly, blank answers will be inturpretted as an empty string.
 
 ![command prompt](./assets/images/command_prompt.png)
 
-
+- Your file will be generated as "GEN_README.md" in order to avoid conflicts with other README's that you may have present. You may now rename, edit, and add to the generated file however you please in your text editor of choide.
 
 ![generated markdown](./assets/images/generated_markdown.PNG)
 
-
+- When previewing, the badge displaying the chosen license (if one was chosen) will display at the top.
 
 ![generated markdown preview](./assets/images/generated_markdown_preview.PNG)
 
