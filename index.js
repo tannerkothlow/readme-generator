@@ -16,9 +16,9 @@ const questions = [
     'How can a user contribute to your repo?'
 ];
 
-// TODO: Create a function to write README file
 writeToFile = (fileName, data) => {
     //Breaks response down into all the individual pieces we need for ease of filling the template.
+    
     // const {userGitHub, userEmail, projName, projDesc, projLicense, projInst, projTest, projRepoUse, projContr} = data
     // console.log(`File name: ${fileName}.\n Prop 1: ${userGitHub}\n Prop 2: ${userEmail}\n Prop 3: ${projName}\n License Requested: ${projLicense}`);
 
