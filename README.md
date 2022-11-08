@@ -30,7 +30,7 @@ Clone the repository to your machine. Once completed open the integrated termina
 
 ![generated markdown preview](./assets/images/generated_markdown_preview.PNG)
 
-Additionally, consult ![this brief demo video](https://drive.google.com/file/d/1RXKGElOvQM572t7jaVA_yg0hc3EsxzvR/view?usp=sharing) for a live demonstration.
+Additionally, consult [this brief demo video](https://drive.google.com/file/d/1RXKGElOvQM572t7jaVA_yg0hc3EsxzvR/view?usp=sharing) for a live demonstration.
 
 ## License 
 
